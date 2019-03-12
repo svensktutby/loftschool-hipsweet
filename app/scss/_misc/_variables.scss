@@ -1,0 +1,33 @@
+/* VARIABLES
+============================== */
+
+/* Colors
+******************************/
+$txt-c_base:    #000; // Text-color base
+$bg-c_base:     #fff; // Background-color base
+
+/* Fonts
+******************************/
+$fs_rem:            16px; // Font-size rem(html)
+$fs_base:           18px; // Font-size base(body)
+$fs_h1:             35px; // Font-size for h1
+$lh_base:           26px; // Line-height base
+$fw_base:           400; // Font-weight
+$ff_base:           "Fira Sans", "Arial", sans-serif; // Font-family base
+
+/* Sizes
+******************************/
+$screen-xl:          1200px; // Large tablets and desktops
+$screen-lg:          992px; // Tablets and small desktops
+$screen-md:          768px; // Small tablets (portrait view)
+$screen-sm:          480px; // Small tablets (portrait view)
+$screen-xs:          320px; // Tiny phones
+
+$screen-xl_bp:       1140px; // Breakpoint for media query
+$screen-lg_bp:       960px;
+$screen-md_bp:       720px;
+$screen-sm_bp:       540px;
+$screen-xs_bp:       auto;
+
+$footer-height:      50px;
+$container-width:    940px;

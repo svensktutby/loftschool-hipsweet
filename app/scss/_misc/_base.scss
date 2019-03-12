@@ -1,0 +1,93 @@
+/* BASE STYLES
+============================== */
+*, *  before, *  after {
+  box-sizing: inherit;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: $fs_rem;
+
+  @include lg {
+    font-size: $fs_rem - 1px;
+  }
+
+  @include md {
+    font-size: $fs_rem - 2px;
+  }
+
+  @include sm {
+    font-size: $fs_rem - 3px;
+  }
+
+  @include xs {
+    font-size: $fs_rem - 4px;
+  }
+}
+
+body {
+  @include font-size($fs_base, $lh_base);
+  font-family: $ff_base;
+
+  background-color: $white;
+
+  -webkit-font-smoothing: antialiased;
+
+  
+}
+
+.page-wrapper {
+  position: relative;
+
+  min-width: $container-width + 20px;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+.page-wrapper:after {
+  content: "";
+
+  display: block;
+  height: $footer-height;
+  overflow: hidden;
+}
+
+.container {
+  width: $container-width;
+  margin: 0 auto;
+
+  @include xl {
+    width: $screen-xl_bp;
+  }
+
+  @include lg {
+    width: $screen-lg_bp;
+  }
+
+  @include md {
+    width: $screen-md_bp;
+  }
+
+  @include sm {
+    width: auto;
+  }
+}
+
+ul {
+  @extend %clear-list;
+}
+
+footer {
+  position: relative;
+
+  width: 100%;
+  min-width: $container-width + 20px;
+  height: $footer-height;
+  margin-top: -$footer-height;
+}
