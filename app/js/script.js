@@ -7,8 +7,10 @@
 }());
 /* jshint esnext: true */
 
-/* Slider
+/* Slider (BX)
 ******************************/
 ;(function() {
-  
+  $('.popular-products__list--slider').bxSlider({
+    controls: false
+  });
 }());

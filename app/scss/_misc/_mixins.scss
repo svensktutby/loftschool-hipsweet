@@ -62,17 +62,17 @@
 
 /* Clear marging/padding
 ******************************/
-%clear {
+@mixin clear {
   margin: 0;
   padding: 0;
 }
 
 /* Clear list
 ******************************/
-%clear-list {
+@mixin clear-list {
   list-style: none;
 
-  @extend %clear;
+  @include clear;
 }
 
 /* Centerize flex element

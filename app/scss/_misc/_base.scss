@@ -34,12 +34,10 @@ html {
 body {
   @include font-size($fs_base, $lh_base);
   font-family: $ff_base;
-
-  background-color: $white;
+  color: $txt-c_base;
+  background-color: $bg-c_base;
 
   -webkit-font-smoothing: antialiased;
-
-  
 }
 
 .page-wrapper {
@@ -80,7 +78,7 @@ body {
 }
 
 ul {
-  @extend %clear-list;
+  @include clear-list;
 }
 
 footer {
@@ -90,4 +88,9 @@ footer {
   min-width: $container-width + 20px;
   height: $footer-height;
   margin-top: -$footer-height;
+}
+
+.main-title--hidden,
+.section-title--hidden {
+  @extend %visually-hidden;
 }

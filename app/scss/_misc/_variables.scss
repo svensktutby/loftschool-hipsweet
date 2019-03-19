@@ -3,17 +3,27 @@
 
 /* Colors
 ******************************/
-$txt-c_base:    #000; // Text-color base
-$bg-c_base:     #fff; // Background-color base
+$white:           #fff;
+$yellow:          #ffb100;
+$brown:           #883213;
+$dark-blue:       #2b2f60;
+$light-grey:      #8d8d8d;
+$dark-grey:       #747474;
+$darkest-grey:    #484848;
+$black:           #393939;
+
+$txt-c_base:      $dark-grey; // Text-color base
+$bg-c_base:       $white; // Background-color base
 
 /* Fonts
 ******************************/
 $fs_rem:            16px; // Font-size rem(html)
-$fs_base:           18px; // Font-size base(body)
-$fs_h1:             35px; // Font-size for h1
-$lh_base:           26px; // Line-height base
+$fs_base:           16px; // Font-size base(body)
+$fs_h2:             62px; // Font-size for h2
+$lh_base:           23px; // Line-height base
 $fw_base:           400; // Font-weight
-$ff_base:           "Fira Sans", "Arial", sans-serif; // Font-family base
+$ff_base:           "Arial", sans-serif; // Font-family base
+$ff_title:          "ALS Malina", monospace; // Font-family base
 
 /* Sizes
 ******************************/
@@ -29,5 +39,5 @@ $screen-md_bp:       720px;
 $screen-sm_bp:       540px;
 $screen-xs_bp:       auto;
 
-$footer-height:      50px;
-$container-width:    940px;
+$footer-height:      125px;
+$container-width:    1100px;

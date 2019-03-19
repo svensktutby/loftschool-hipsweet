@@ -5,11 +5,18 @@
 ******************************/
 @import "./_misc/variables";
 @import "./_misc/mixins";
+@import "./_misc/sprite-png";
+@import "./_misc/sprite-svg";
+@import "./_misc/fonts";
 @import "./_misc/base";
-// @import "./_misk/sprite";
 
 /*! Parts
 ******************************/
 @import "./parts/header";
-@import "./parts/content";
+@import "./parts/popular-products";
+@import "./parts/why-tasty";
+@import "./parts/our-products";
+@import "./parts/our-team";
+@import "./parts/faq";
+@import "./parts/map";
 @import "./parts/footer";
