@@ -5,12 +5,17 @@
 ******************************/
 $white:           #fff;
 $yellow:          #ffb100;
+$red:             #bb262a;
 $brown:           #883213;
 $dark-blue:       #2b2f60;
 $light-grey:      #8d8d8d;
 $dark-grey:       #747474;
 $darkest-grey:    #484848;
 $black:           #393939;
+
+$bg-grad-white:   linear-gradient(to right, rgba(200, 200, 200, 0.5), rgba(228, 228, 228, 0.5));
+$bg-grad-yellow:   linear-gradient(to right, #ffad22, #feb506);
+$bg-grad-red:     linear-gradient(to right, #cf3538, #a4161c);
 
 $txt-c_base:      $dark-grey; // Text-color base
 $bg-c_base:       $white; // Background-color base
@@ -23,7 +28,7 @@ $fs_h2:             62px; // Font-size for h2
 $lh_base:           23px; // Line-height base
 $fw_base:           400; // Font-weight
 $ff_base:           "Arial", sans-serif; // Font-family base
-$ff_title:          "ALS Malina", monospace; // Font-family base
+$ff_alternate:      "ALS Malina", monospace; // Font-family base
 
 /* Sizes
 ******************************/

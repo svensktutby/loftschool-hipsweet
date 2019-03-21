@@ -59,10 +59,7 @@ body {
 .container {
   width: $container-width;
   margin: 0 auto;
-
-  @include xl {
-    width: $screen-xl_bp;
-  }
+  padding: 0 10px;
 
   @include lg {
     width: $screen-lg_bp;
@@ -90,7 +87,9 @@ footer {
   margin-top: -$footer-height;
 }
 
-.main-title--hidden,
-.section-title--hidden {
-  @extend %visually-hidden;
+.main-title,
+.section-title {
+  &--hidden {
+    @extend %visually-hidden;
+  }
 }

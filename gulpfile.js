@@ -100,7 +100,8 @@ gulp.task('pngSprite', function() {
     imgName: 'sprite.png',
     cssName: '_sprite-png.scss',
     cssFormat: 'scss',
-    padding: 2,
+    padding: 10,
+    algorithm: 'top-down',
     cssVarMap: function (sprite) {
         sprite.name = 'icon-' + sprite.name;
     },
