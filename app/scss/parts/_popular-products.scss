@@ -6,6 +6,8 @@
 }
 
 .bx-wrapper {
+  margin-bottom: 0;
+
   background: transparent;
   border: none;
   box-shadow: none;
@@ -22,7 +24,7 @@
         width: 8px;
         height: 8px;
         margin: 0 5px;
-  
+
         background: $white;
         border-radius: 50%;
 
@@ -52,14 +54,14 @@
 }
 
 .popular-product__bg-title {
-  @include font-size(150px, 150px);
+  @include font-size(160px, 150px);
 
   position: absolute;
-  top: 50%;
+  top: 45%;
   z-index: -1;
 
   margin-top: rem(-75px);
-  padding: 0 rem(40px);
+  padding: 0 rem(20px);
 
   font-family: $ff_alternate;
   text-align: center;

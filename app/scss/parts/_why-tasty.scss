@@ -1,2 +1,93 @@
 /* why-tasty
 ============================== */
+.why-tasty {
+  background-color: $white;
+  background-image: $bg-grad-white;
+}
+
+.why-tasty__inner {
+  background-image: url("../img/cook.png");
+  background-repeat: no-repeat;
+  background-position: 98% 100%;
+  background-size: 383px 708px;
+}
+
+.why-tasty__content {
+  max-width: rem(650px);
+  padding: rem(100px) 0 rem(120px);
+  padding-left: rem(70px);
+}
+
+.why-tasty__title {
+  @include font-size(62px, 74px);
+
+  max-width: rem(405px);
+  margin: 0 0 rem(32px);
+
+  font-family: $ff_alternate;
+  color: $dark-blue;
+}
+
+.why-tasty__annotation {
+  @include font-size(15px, 23px);
+
+  max-width: rem(405px);
+  margin-bottom: rem(65px);
+}
+
+.advantage {
+  font-size: 0;
+}
+
+.advantage__item {
+  @include inline-block();
+  @include font-size($fs_base, $lh_base);
+
+  position: relative;
+
+  width: 30%;
+  margin-right: rem(20px);
+  padding-top: rem(120px);
+
+  font-family: $ff_alternate;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &::before {
+    @include pseudo();
+
+    top: 0;
+
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &--best {
+    &::before {
+      width: 108px;
+      height: 108px;
+
+      background-image: url("../img/background/cook.png");
+    }
+  }
+
+  &--fresh {
+    &::before {
+      width: 118px;
+      height: 90px;
+
+      background-image: url("../img/background/ingredients.png");
+    }
+  }
+
+  &--heart {
+    &::before {
+      width: 103px;
+      height: 96px;
+
+      background-image: url("../img/background/heart.png");
+    }
+  }
+}
