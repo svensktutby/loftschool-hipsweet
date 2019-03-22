@@ -2,7 +2,6 @@
 ============================== */
 .page-header {
   padding: rem(25px) 0;
-  padding-bottom: 500px;
 
   background-color: $red;
   background-image: $bg-grad-red;
@@ -41,17 +40,21 @@
   @extend %clearfix;
 }
 
-.page-header__col--left {
-  float: left;
-  width: rem(340px);
+.page-header__col {
+  &--left {
+    float: left;
+    width: rem(340px);
+  }
 }
 
-.page-header__col--right {
-  @extend %clearfix;
+.page-header__col {
+  &--right {
+    @extend %clearfix;
 
-  float: right;
-  width: rem(685px);
-  padding-top: rem(15px);
+    float: right;
+    width: rem(685px);
+    padding-top: rem(15px);
+  }
 }
 
 .main-nav__list,
@@ -95,25 +98,24 @@
     .main-nav__link {
       &::after {
         @include pseudo(inline-block, static);
-  
+
         width: 4px;
         height: 4px;
         margin-top: -3px;
         margin-left: 5px;
-  
+
         vertical-align: middle;
-  
+
         border-right: 1px solid #fff;
         border-bottom: 1px solid #fff;
         transform: rotate(45deg);
-  
+
         transition: border-color 0.3s;
       }
     }
 
     &:hover {
       .main-nav__link {
-
         &::after {
           margin-top: 2px;
 
@@ -121,7 +123,6 @@
           transform: rotate(225deg);
         }
       }
-
       .main-nav__sub-list {
         z-index: 1;
 
@@ -136,6 +137,12 @@
 
   &:first-child {
     margin-left: 0;
+  }
+
+  &:hover {
+    .optional__link {
+      background-color: rgba($yellow, 0.7);
+    }
   }
 }
 
@@ -156,6 +163,23 @@
   letter-spacing: rem(1.5px);
 
   transition: color 0.3s;
+
+  &:focus {
+    color: $yellow;
+
+    + .main-nav__sub-list {
+      z-index: 1;
+
+      opacity: 1;
+    }
+
+    &::after {
+      margin-top: 2px;
+
+      border-color: $yellow;
+      transform: rotate(225deg);
+    }
+  }
 }
 
 .main-nav__sub-list {
@@ -169,7 +193,7 @@
   padding: rem(35px) rem(50px);
 
   background-color: rgba($white, 0.92);
-  border-radius: 15px;
+  border-radius: 20px;
   opacity: 0;
 
   transition: opacity 0.3s;
@@ -216,7 +240,8 @@
     transition: border-left-color 0.3s;
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
     font-weight: 700;
     color: #303030;
 
@@ -244,7 +269,7 @@
     vertical-align: middle;
   }
 
-  &:hover {
+  &:focus {
     background-color: rgba($yellow, 0.7);
   }
 }

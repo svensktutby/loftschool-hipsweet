@@ -28,6 +28,15 @@
   @if $lh { line-height: $lh; }
 }
 
+/* Image width 100%
+******************************/
+@mixin img($width: false, $display: block, $max-width: 100%, $height: auto) {
+  width: $width;
+  display: $display;
+  max-width: $max-width;
+  height: $height;
+}
+
 /* Clearfix
 ******************************/
 %clearfix {
@@ -81,14 +90,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-/* Image width 100%
-******************************/
-%img {
-  display: block;
-  max-width: 100%;
-  height: auto;
 }
 
 /* Inline-block

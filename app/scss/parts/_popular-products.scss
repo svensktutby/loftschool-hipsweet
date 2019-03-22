@@ -1,2 +1,304 @@
 /* popular-products
 ============================== */
+.popular-products {
+  background-color: $red;
+  background-image: $bg-grad-red;
+}
+
+.bx-wrapper {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+
+  .bx-pager {
+    position: absolute;
+    bottom: 59px;
+
+    width: 100%;
+
+    .bx-pager-item {
+      padding: 0 10px;
+      .bx-pager-link {
+        width: 8px;
+        height: 8px;
+        margin: 0 5px;
+  
+        background: $white;
+        border-radius: 50%;
+
+        &.active {
+          background-color: $yellow;
+
+          &:hover,
+          &:focus {
+            background-color: $yellow;
+          }
+        }
+
+        &:hover,
+        &:focus {
+          background-color: $white;
+          box-shadow: 0 0 8px rgba($black, 0.8);
+        }
+      }
+    }
+  }
+}
+
+.popular-product {
+  position: relative;
+
+  padding: rem(20px) 0 rem(125px);
+}
+
+.popular-product__bg-title {
+  @include font-size(150px, 150px);
+
+  position: absolute;
+  top: 50%;
+  z-index: -1;
+
+  margin-top: rem(-75px);
+  padding: 0 rem(40px);
+
+  font-family: $ff_alternate;
+  text-align: center;
+  color: rgba($white, 0.1);
+}
+
+.popular-product__row {
+  @extend %clearfix;
+}
+
+.popular-product__col {
+  &--left {
+    @extend %clearfix;
+
+    float: left;
+    width: rem(615px);
+  }
+}
+
+.popular-product__characteristic {
+  float: left;
+  width: rem(140px);
+  padding-top: rem(110px);
+}
+
+.ingredient {
+  position: relative;
+
+  padding-left: rem(44px);
+
+  &:hover,
+  &:focus {
+    .ingredient__list-wrapper {
+      z-index: 1;
+
+      opacity: 1;
+    }
+  }
+}
+
+.ingredient__link {
+  position: relative;
+
+  &::after {
+    @include sprite($icon-ingredient);
+  }
+}
+
+.ingredient__text {
+  position: absolute;
+  top: rem(35px);
+  left: 50%;
+
+  margin-left: rem(-50px);
+  padding-top: rem(10px);
+}
+
+.ingredient__list-wrapper {
+  position: absolute;
+  top: rem(-71px);
+  left: rem(138px);
+  z-index: -1;
+
+  min-width: rem(380px);
+  padding: rem(29px) rem(40px);
+
+  background-color: rgba($white, 0.92);
+  border-radius: 20px;
+  opacity: 0;
+
+  transition: opacity 0.3s;
+
+  &::before {
+    @include css-triangle(rgba($white, 0.92), left, $size: 20px);
+
+    top: rem(73px);
+    left: 8px;
+
+    border-right-width: 12px;
+  }
+
+  &::after {
+    @include pseudo;
+
+    top: 0;
+    right: 100%;
+    bottom: 0;
+
+    width: 55px;
+  }
+}
+
+.ingredient__list {
+  width: 100%;
+}
+
+.ingredient__name,
+.ingredient__amount {
+  @include inline-block(middle);
+
+  padding: rem(6px);
+}
+
+.ingredient__name {
+  width: 78%;
+  padding-left: rem(27px);
+
+  &::before {
+    @include pseudo;
+
+    left: 30px;
+  }
+
+  &--flour {
+    &::before {
+      @include sprite($icon-flour);
+
+      margin-left: 2px;
+    }
+  }
+
+  &--eggs {
+    &::before {
+      @include sprite($icon-eggs);
+    }
+  }
+
+  &--sugar {
+    &::before {
+      @include sprite($icon-sugar);
+    }
+  }
+
+  &--butter {
+    &::before {
+      @include sprite($icon-butter);
+
+      margin-left: -3px;
+    }
+  }
+
+  &--milk-cond {
+    &::before {
+      @include sprite($icon-milk-cond);
+
+      margin-left: 2px;
+    }
+  }
+}
+
+.ingredient__amount {
+  width: 22%;
+}
+
+.shelf-life {
+  padding-top: rem(236px);
+
+  text-align: center;
+}
+
+.shelf-life__title {
+  @include font-size(13px, 14px);
+
+  color: rgba($white, 0.28);
+}
+
+.shelf-life__time {
+  @include font-size(24px, 26px);
+
+  font-family: $ff-alternate;
+  color: $white;
+}
+
+.popular-product__img-wraper {
+  float: left;
+  width: rem(475px);
+  padding-top: rem(23px);
+  padding-left: rem(41px);
+}
+
+.popular-product__img {
+  @include img(rem(440px));
+}
+
+
+.popular-product__col {
+  &--right {
+    float: right;
+    width: rem(390px);
+  }
+}
+
+.popular-product__title {
+  @include font-size(62px, 74px);
+
+  margin: rem(60px) 0 rem(24px);
+
+  font-family: $ff_alternate;
+  color: $white;
+}
+
+.popular-product__text {
+  @include font-size(15px, 21px);
+
+  margin-bottom: rem(20px);
+
+  color: $white;
+}
+
+.popular-product__price {
+  @include font-size(62px);
+  @include inline-block(middle);
+
+  margin-right: rem(43px);
+
+  font-family: $ff_alternate;
+  color: $white;
+}
+
+.popular-product__order-btn {
+  @include font-size(14px);
+  @include inline-block(middle);
+
+  margin-top: rem(5px);
+  padding: rem(9px) rem(22px);
+
+  color: #a4151c;
+  text-decoration: none;
+
+  background-color: $yellow;
+  border: 2px solid $yellow;
+  border-radius: 25px;
+
+  transition: color 0.3s, background-color 0.3s;
+
+  &:hover,
+  &:focus {
+    color: $yellow;
+
+    background-color: #a4151c;
+  }
+}
