@@ -63,6 +63,7 @@
   margin-top: rem(-75px);
   padding: 0 rem(20px);
 
+  font-weight: 400;
   font-family: $ff_alternate;
   text-align: center;
   color: rgba($white, 0.1);
@@ -225,6 +226,7 @@
 .shelf-life__title {
   @include font-size(13px, 14px);
 
+  font-weight: 400;
   color: rgba($white, 0.28);
 }
 

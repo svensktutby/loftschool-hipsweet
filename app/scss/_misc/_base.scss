@@ -1,6 +1,8 @@
 /* BASE STYLES
 ============================== */
-*, *  before, *  after {
+*,
+*  before,
+*  after {
   box-sizing: inherit;
 }
 
@@ -11,30 +13,34 @@ html {
 }
 
 html {
-  box-sizing: border-box;
-  font-size: $fs_rem;
-
-  @include lg {
+@include lg {
     font-size: $fs_rem - 1px;
   }
 
-  @include md {
+@include md {
     font-size: $fs_rem - 2px;
   }
 
-  @include sm {
+@include sm {
     font-size: $fs_rem - 3px;
   }
 
-  @include xs {
+@include xs {
     font-size: $fs_rem - 4px;
   }
+
+  box-sizing: border-box;
+
+  font-size: $fs_rem;
 }
 
 body {
   @include font-size($fs_base, $lh_base);
+
   font-family: $ff_base;
   color: $txt-c_base;
+  word-wrap: break-word;
+
   background-color: $bg-c_base;
 
   -webkit-font-smoothing: antialiased;
@@ -57,21 +63,21 @@ body {
 }
 
 .container {
-  width: $container-width;
-  margin: 0 auto;
-  padding: 0 10px;
-
-  @include lg {
+@include lg {
     width: $screen-lg_bp;
   }
 
-  @include md {
+@include md {
     width: $screen-md_bp;
   }
 
-  @include sm {
+@include sm {
     width: auto;
   }
+
+  width: $container-width;
+  margin: 0 auto;
+  padding: 0 10px;
 }
 
 ul {
