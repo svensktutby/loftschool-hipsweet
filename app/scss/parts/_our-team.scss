@@ -1,2 +1,381 @@
 /* our-team
 ============================== */
+.our-team {
+  padding: rem(74px) 0 rem(118px);
+
+  background-color: $white;
+  background-image: $bg-grad-grey;
+}
+
+.cooks {
+  @extend %clearfix;
+
+  margin-bottom: rem(55px);
+}
+
+.cooks__col {
+  &--left {
+    float: left;
+    width: rem(320px);
+  }
+
+  &--right {
+    float: right;
+    width: rem(710px);
+  }
+}
+
+.our-team__title {
+  @include font-size(62px, 78px);
+
+  margin: 0;
+
+  font-weight: 400;
+  font-family: $ff_alternate;
+  color: $dark-blue;
+}
+
+.cooks__list {
+  padding-top: rem(6px);
+
+  font-size: 0;
+}
+
+.contributor {
+  @include inline-block();
+
+  margin-right: rem(10px);
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &--active {
+    .contributor__link {
+      background-color: $brown;
+      border-radius: 20px;
+
+      &::after {
+        border-top-color: $brown;
+      }
+    }
+
+    .contributor__name {
+      color: $yellow;
+    }
+
+    .contributor__position {
+      color: $white;
+    }
+  }
+}
+
+.contributor__link {
+  position: relative;
+
+  display: block;
+  max-width: rem(230px);
+  padding: rem(20px) rem(30px) rem(27px);
+
+  text-decoration: none;
+
+  border-radius: 20px;
+
+  transition: background-color 0.3s;
+
+  &::after {
+    @include css-triangle(transparent, down, $size: 18px);
+
+    bottom: -10px;
+    left: 50%;
+
+    margin-left: rem(-18px);
+
+    border-top-width: 10px;
+
+    transition: border-top-color 0.3s;
+  }
+
+  &:hover {
+    background-color: $brown;
+
+    &::after {
+      border-top-color: $brown;
+    }
+
+    .contributor__name {
+      color: $yellow;
+    }
+
+    .contributor__position {
+      color: $white;
+    }
+  }
+}
+
+.contributor__name {
+  @include font-size(30px, 32px);
+
+  margin: 0 0 rem(10px);
+
+  font-weight: 400;
+  font-family: $ff_alternate;
+  color: $dark-blue;
+}
+
+.contributor__position {
+  @include font-size($fs_base, $lh_base);
+
+  color: $light-grey;
+  letter-spacing: 1px;
+}
+
+.our-team__content {
+  position: relative;
+
+  min-height: rem(613px);
+  padding: rem(30px) 0;
+
+  background-image: url("../img/chief.png");
+  background-repeat: no-repeat;
+  background-position: 38% 0;
+
+  &::before {
+    @include pseudo();
+    @include sprite($icon-qoute);
+
+    top: 25px;
+    left: 32%;
+  }
+}
+
+.contributor-desc {
+  @extend %clearfix;
+
+  display: none;
+
+  &--active {
+    display: block;
+  }
+}
+
+.contributor-desc__col {
+  p {
+    @include font-size(14px, 21px);
+
+    margin: rem(18px) 0;
+
+    font-style: italic;
+  }
+
+  strong {
+    font-weight: 700;
+  }
+
+  &--left {
+    float: left;
+    width: rem(275px);
+  }
+
+  &--right {
+    float: right;
+    width: rem(335px);
+  }
+}
+
+/* order-block
+******************************/
+.order-block {
+  @extend %clearfix;
+
+  width: rem(845px);
+  margin: 0 auto;
+
+  background-color: $brown;
+  background-image: url("../img/background/bg-order.jpg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: cover;
+  border-radius: 20px;
+}
+
+.order-block__col {
+  &--left {
+    float: left;
+    width: rem(435px);
+    padding-top: rem(115px);
+  }
+
+  &--right {
+    position: relative;
+
+    float: right;
+    width: rem(410px);
+    min-height: rem(406px);
+
+    background-color: rgba(0, 0, 0, 0.83);
+    border-radius: 0 20px 20px 0;
+  }
+}
+
+.order-block__form {
+  padding: rem(65px) rem(90px) rem(31px) rem(43px);
+}
+
+.order-block__title {
+  @include font-size(64px, 76px);
+
+  max-width: rem(310px);
+  margin: 0 auto;
+
+  font-weight: 400;
+  font-family: $ff_alternate;
+  color: $white;
+  letter-spacing: rem(5px);
+}
+
+.form-order__field {
+  margin-bottom: rem(26px);
+
+  &--check {
+    padding-top: rem(10px);
+  }
+}
+
+.form-order__input {
+  width: 100%;
+  padding: rem(15px) rem(1px);
+
+  font: inherit;
+  color: $white;
+
+  background-color: transparent;
+  border: 0;
+  border-bottom: 1px solid $white;
+
+  &::placeholder {
+    color: $white;
+  }
+
+  &:focus {
+    border-bottom-color: rgba($white, 0.7);
+    outline: none;
+    &::placeholder {
+      color: rgba($white, 0.7);
+    }
+  }
+}
+
+.form-order__check {
+  @extend %visually-hidden;
+
+  &:checked + .form-order__label::after {
+    display: block;
+  }
+
+  &:focus + .form-order__label::before {
+    outline: 3px solid rgba($dark-grey, 0.7);
+  }
+}
+
+.form-order__label {
+  position: relative;
+
+  color: $white;
+
+  cursor: pointer;
+
+  &::before {
+    @include pseudo(inline-block, static);
+
+    width: 10px;
+    height: 10px;
+    margin-right: rem(13px);
+
+    background-color: $white;
+    border-radius: 1px;
+  }
+
+  &::after {
+    @include pseudo(none);
+    @include sprite($icon-check);
+
+    top: 1px;
+    left: 0;
+  }
+}
+
+.form-order__btn {
+  position: absolute;
+  right: -32px;
+  bottom: -36px;
+
+  width: 96px;
+  height: 96px;
+
+  background-color: $yellow;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+
+  transition: background-color 0.3s;
+
+  &::before {
+    @include css-triangle($brown, right, $size: 25px);
+
+    top: 25px;
+    left: 50px;
+
+    transition: border-left-color 0.3s;
+  }
+
+  &::after {
+    @include pseudo;
+
+    top: 35px;
+    left: 28px;
+
+    width: 22px;
+    height: 30px;
+
+    background-color: $brown;
+
+    transition: background-color 0.3s;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $brown;
+    outline: none;
+
+    &::before {
+      border-left-color: $yellow;
+    }
+
+    &::after {
+      background-color: $yellow;
+    }
+  }
+}
+
+.form-order__btn-text {
+  &--hidden {
+    @extend %visually-hidden;
+  }
+}
+
+.submit-error {
+  animation: shake 0.6s;
+}
+
+.input-error {
+  border-bottom-color: rgba(red, 0.7);
+
+  &::placeholder {
+    color: rgba(red, 0.7);
+  }
+}
+
+.checkbox-error {
+  color: rgba(red, 0.7);
+}

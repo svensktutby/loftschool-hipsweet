@@ -458,7 +458,7 @@
 
           <div class="cooks__col cooks__col--right">
             <ul class="cooks__list">
-              <li class="cooks__item cooks__item--active contributor">
+              <li class="cooks__item contributor contributor--active">
                 <a class="contributor__link" href="#tony">
                   <h3 class="contributor__name">Тони Ройстер</h3>
                   <div class="contributor__position">Главный шеф повар</div>
@@ -524,13 +524,13 @@
                 <input class="form-order__input" id="user-name" type="text" name="user-name" placeholder="Введите ваше Имя">
               </div>
               <div class="form-order__field">
-                <input class="form-order__input" id="user-email" type="text" name="user-email" placeholder="Введите ваш Email">
+                <input class="form-order__input" id="user-email" type="email" name="user-email" placeholder="Введите ваш Email">
               </div>
               <div class="form-order__field">
                 <input class="form-order__input" id="user-phone" type="tel" name="user-phone" placeholder="8 (___) ___ -__-__">
               </div>
-              <div class="form-order__field">
-                <input class="form-order__input" id="order-check" type="checkbox" name="order-check">
+              <div class="form-order__field form-order__field--check">
+                <input class="form-order__check" id="order-check" type="checkbox" name="order-check">
                 <label class="form-order__label" for="order-check">Заказать обратный звонок</label>
               </div>
               <div class="modal-write-us__btn-wrapper">
@@ -666,6 +666,7 @@
 <!-- build:js js/script.min.js -->
 <script src="./js/jquery-1.12.4.min.js"></script>
 <script src="./js/jquery.bxslider.min.js"></script>
+<script src="./js/jquery.maskedinput.min.js"></script>
 <script src="./js/script.js"></script>
 <!-- endbuild -->
 </body>

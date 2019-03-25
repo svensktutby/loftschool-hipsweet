@@ -31,7 +31,9 @@
 /* Image width 100%
 ******************************/
 @mixin img($width: false, $display: block, $max-width: 100%, $height: auto) {
-  width: $width;
+  @if $width != false {
+    width: $width;
+	}
   display: $display;
   max-width: $max-width;
   height: $height;

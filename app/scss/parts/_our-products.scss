@@ -38,6 +38,7 @@
 .our-products__list {
   font-size: 0;
   margin: 0 rem(-20px);
+  padding: 0 rem(10px);
 }
 
 .our-products__item {
@@ -56,6 +57,8 @@
 .our-product__img {
   position: absolute;
   bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
   @include img();
 }
 
