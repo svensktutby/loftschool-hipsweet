@@ -1,2 +1,76 @@
 /* faq
 ============================== */
+.faq {
+  padding: rem(90px) 0 rem(90px);
+
+  background-color: $red;
+  background-image: url("../img/background/bg-faq.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.faq__title {
+  @include font-size(40px);
+
+  margin: 0 0 rem(50px);
+
+  font-weight: 400;
+  font-family: $ff_alternate;
+  text-align: center;
+  color: $white;
+}
+
+.faq__list {
+  padding: 0 rem(105px) 0 rem(93px);
+}
+
+.faq__item {
+  @include font-size(22px);
+  margin-bottom: rem(30px);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  color: $white;
+
+  &--active {
+    color: $yellow;
+
+    .faq__trigger {
+      color: $yellow;
+
+      border-bottom-color: transparent;
+    }
+  }
+}
+
+.faq__question {
+  margin: 0 0 rem(20px);
+}
+
+.faq__trigger {
+  padding-bottom: rem(7px);
+
+  color: $white;
+  font-weight: 400;
+  text-decoration: none;
+  letter-spacing: rem(-1.8px);
+
+  border-bottom: 2px dashed $white;
+
+  &:hover {
+    border-bottom-color: transparent;
+  }
+}
+
+.faq__answer {
+  @include font-size(15px, 21px);
+  padding-left: rem(45px);
+
+  color: $white;
+
+  p {
+    margin: rem(19px) 0;
+  }
+}
