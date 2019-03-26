@@ -35,17 +35,14 @@
 
   color: $white;
 
-  &--active {
+  &--active,
+  &:hover {
     color: $yellow;
 
     .faq__trigger {
       color: $yellow;
 
       border-bottom-color: transparent;
-
-      &:hover {
-        border-bottom-color: $yellow;
-      }
     }
   }
 }

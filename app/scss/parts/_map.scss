@@ -1,2 +1,9 @@
 /* map
 ============================== */
+.map {
+  min-height: rem(537px);
+  background-image: url("../../img/map.jpg");
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  background-size: rem(1600px) rem(537px);
+}

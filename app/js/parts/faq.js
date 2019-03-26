@@ -5,6 +5,8 @@
 ;(function () {
   var flag = true;
 
+  $('.faq__answer:not(:first)').hide();
+
   $('.faq__trigger').on('click', function (event) {
     event.preventDefault();
 
@@ -32,14 +34,10 @@
       } else {
 
         item.removeClass('faq__item--active');
-        currentContent.slideUp(function () {
+        currentContent.slideUp(duration, function () {
           flag = true;
         });
       }
     }
   });
-
-  $('.faq__answer').slideUp();
-  $('.faq__answer:first').slideDown();
-
 }());
