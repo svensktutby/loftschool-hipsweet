@@ -1,7 +1,8 @@
 /* faq
 ============================== */
 .faq {
-  padding: rem(90px) 0 rem(90px);
+  min-height: rem(760px);
+  padding: rem(90px) 0 rem(20px);
 
   background-color: $red;
   background-image: url("../img/background/bg-faq.jpg");
@@ -26,7 +27,7 @@
 
 .faq__item {
   @include font-size(22px);
-  margin-bottom: rem(30px);
+  margin-bottom: rem(33px);
 
   &:last-child {
     margin-bottom: 0;
@@ -41,6 +42,10 @@
       color: $yellow;
 
       border-bottom-color: transparent;
+
+      &:hover {
+        border-bottom-color: $yellow;
+      }
     }
   }
 }
