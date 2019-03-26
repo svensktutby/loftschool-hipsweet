@@ -27,13 +27,16 @@
 
 .faq__item {
   @include font-size(22px);
+
   margin-bottom: rem(33px);
+
+  color: $white;
+
+  transition: color 0.3s;
 
   &:last-child {
     margin-bottom: 0;
   }
-
-  color: $white;
 
   &--active,
   &:hover {
@@ -54,20 +57,25 @@
 .faq__trigger {
   padding-bottom: rem(7px);
 
-  color: $white;
   font-weight: 400;
+  color: $white;
   text-decoration: none;
   letter-spacing: rem(-1.8px);
 
   border-bottom: 2px dashed $white;
 
-  &:hover {
+  transition: color 0.3s, border-bottom-color 0.3s;
+
+  &:focus {
+    color: $yellow;
+
     border-bottom-color: transparent;
   }
 }
 
 .faq__answer {
   @include font-size(15px, 21px);
+
   padding-left: rem(45px);
 
   color: $white;

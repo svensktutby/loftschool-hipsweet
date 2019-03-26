@@ -64,6 +64,7 @@
 }
 
 .socials__list {
+  font-size: 0;
   text-align: right;
 }
 
@@ -71,7 +72,7 @@
   @include inline-block(middle);
 
   margin-bottom: rem(10px);
-  margin-left: rem(27px);
+  margin-left: rem(19px);
 
   &:first-child {
     margin-left: 0;
@@ -79,29 +80,38 @@
 }
 
 .socials__link {
+  @include font-size($fs_base, $lh_base);
+
   display: block;
+  width: rem(30px);
+
+  text-align: center;
 
   opacity: 0.5;
 
   transition: opacity 0.3s;
 
-  &--fb {
+  &::before {
+    @include pseudo(inline-block, static);
+  }
+
+  &--fb::before {
     @include sprite($icon-facebook);
   }
 
-  &--in {
+  &--in::before {
     @include sprite($icon-instagram);
   }
 
-  &--ok {
+  &--ok::before {
     @include sprite($icon-ok);
   }
 
-  &--tw {
+  &--tw::before {
     @include sprite($icon-twitter);
   }
 
-  &--vk {
+  &--vk::before {
     @include sprite($icon-vkontakte);
   }
 

@@ -53,7 +53,7 @@
 
   font-family: $ff_alternate;
 
-  &:last-child {
+  &:nth-child(3n) {
     margin-right: 0;
   }
 
