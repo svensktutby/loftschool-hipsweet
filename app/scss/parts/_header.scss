@@ -7,10 +7,6 @@
   background-image: $bg-grad-red;
 }
 
-.logo {
-  margin-left: rem(21px);
-}
-
 .logo__link {
   display: block;
 }
@@ -21,8 +17,7 @@
 }
 
 .logo__img {
-  width: rem(80px);
-  height: auto;
+  @include img(rem(80px), inline-block);
 }
 
 .logo__title {
@@ -31,9 +26,10 @@
   margin-left: rem(20px);
   padding-top: 3px;
 
+  font-weight: 400;
   font-family: $ff_alternate;
   color: $yellow;
-  letter-spacing: 2px;
+  letter-spacing: rem(2px);
 }
 
 .main-nav {
@@ -44,10 +40,9 @@
   &--left {
     float: left;
     width: rem(340px);
+    margin-left: rem(21px);
   }
-}
 
-.page-header__col {
   &--right {
     @extend %clearfix;
 
@@ -167,7 +162,7 @@
   &:focus {
     color: $yellow;
 
-    + .main-nav__sub-list {
+     + .main-nav__sub-list {
       z-index: 1;
 
       opacity: 1;

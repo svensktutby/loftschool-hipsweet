@@ -1,2 +1,117 @@
 /* page-footer
 ============================== */
+.page-footer {
+  padding: rem(20px) 0 rem(20px);
+
+  background-color: $white;
+
+  .container {
+    @extend %clearfix;
+  }
+}
+
+.page-footer__col {
+  &--left {
+    float: left;
+    width: rem(250px);
+    margin-right: rem(26px);
+  }
+
+  &--center {
+    float: left;
+    width: rem(530px);
+    padding-top: rem(18px);
+  }
+
+  &--right {
+    float: right;
+    width: rem(260px);
+    padding-top: rem(18px);
+  }
+}
+
+.logo {
+  &--footer {
+    .logo__img {
+      width: rem(67px);
+    }
+
+    .logo__title {
+      @include font-size(30px);
+
+      margin-left: rem(2px);
+      padding-top: 0;
+
+      letter-spacing: 0;
+    }
+  }
+}
+
+.copyright,
+.address {
+  @include inline-block();
+}
+
+.copyright {
+  margin-right: rem(37px);
+}
+
+.copyright__text,
+.address__text {
+  @include font-size(14px);
+
+  color: $light-grey;
+}
+
+.socials__list {
+  text-align: right;
+}
+
+.socials__item {
+  @include inline-block(middle);
+
+  margin-bottom: rem(10px);
+  margin-left: rem(27px);
+
+  &:first-child {
+    margin-left: 0;
+  }
+}
+
+.socials__link {
+  display: block;
+
+  opacity: 0.5;
+
+  transition: opacity 0.3s;
+
+  &--fb {
+    @include sprite($icon-facebook);
+  }
+
+  &--in {
+    @include sprite($icon-instagram);
+  }
+
+  &--ok {
+    @include sprite($icon-ok);
+  }
+
+  &--tw {
+    @include sprite($icon-twitter);
+  }
+
+  &--vk {
+    @include sprite($icon-vkontakte);
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.socials__text {
+  &--hidden {
+    @extend %visually-hidden;
+  }
+}
