@@ -15,6 +15,7 @@
     float: left;
     width: rem(250px);
     margin-right: rem(26px);
+    margin-left: rem(10px);
   }
 
   &--center {
@@ -72,10 +73,10 @@
   @include inline-block(middle);
 
   margin-bottom: rem(10px);
-  margin-left: rem(19px);
+  margin-right: rem(22px);
 
-  &:first-child {
-    margin-left: 0;
+  &:last-child {
+    margin-right: 0;
   }
 }
 
@@ -115,7 +116,9 @@
     @include sprite($icon-vkontakte);
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
+    outline: none;
     opacity: 1;
   }
 }

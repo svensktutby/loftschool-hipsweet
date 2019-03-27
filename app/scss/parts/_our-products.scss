@@ -1,7 +1,7 @@
 /* our-products
 ============================== */
 .our-products {
-  padding: rem(92px) 0 rem(42px);
+  padding: rem(92px) 0 rem(31px);
 
   background-color: $yellow;
   background-image: url(../img/background/bg-products.jpg);
@@ -12,16 +12,15 @@
 
   margin: 0 0 rem(10px);
 
-  font-weight: 400;
-  font-family: $ff_alternate;
   text-align: center;
   color: $black;
 }
 
 .our-products__order-desc {
-  @include font-size(14px);
+  @include font-size(14px, 23px);
+
   max-width: rem(780px);
-  margin: 0 auto rem(73px);
+  margin: 0 auto rem(68px);
 
   text-align: center;
   color: $brown;
@@ -30,36 +29,46 @@
 .our-products__order-link {
   color: $black;
 
-  &:hover {
+  &:hover,
+  &:focus {
     text-decoration: none;
+
+    outline: none;
   }
 }
 
 .our-products__list {
   font-size: 0;
-  margin: 0 rem(-20px);
-  padding: 0 rem(10px);
 }
 
 .our-products__item {
   @include inline-block();
-  width: 21%;
-  margin: 0 rem(20px) rem(30px);
-  padding: rem(192px) rem(10px) rem(10px);
+
+  width: 20%;
+  margin: 0 rem(30px) rem(35px);
+  padding: rem(192px) rem(8px) rem(10px);
+
   text-align: center;
+
+  &:nth-child(4n) {
+    margin-right: 0;
+  }
 }
 
 .our-product__img-wrapper {
   position: relative;
+
   margin-bottom: rem(16px);
 }
 
 .our-product__img {
+  @include img();
+
   position: absolute;
   bottom: 0;
   left: 50%;
+
   transform: translateX(-50%);
-  @include img();
 }
 
 .our-product__title {

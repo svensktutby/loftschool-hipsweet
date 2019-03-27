@@ -1,15 +1,14 @@
 /* jshint esnext: true */
 
-/* Anchor scroll
+/* Smooth scroll to anchors
  ******************************/
 ;(function () {
-  //Плавный скролл по якорям
-  $('a[href^="#"]').on('click', function (event) {
+  $('.our-products__order-link').on('click', function (event) {
     event.preventDefault();
 
-    var elementClick = $(this).attr('href'),
-        destination = $(elementClick).offset().top;
+    var target = $(this).attr('href'),
+        anchor = $(target).offset().top;
 
-    $('body,html').animate({scrollTop: destination}, 1000);
+    $('html, body').animate({scrollTop: anchor}, 1000);
   });
 }());

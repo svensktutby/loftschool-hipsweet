@@ -11,25 +11,22 @@
   display: block;
 }
 
-.logo__img,
-.logo__title {
-  @include inline-block(middle);
-}
-
 .logo__img {
+  @include inline-block(middle);
   @include img(rem(80px), inline-block);
 }
 
 .logo__title {
+  @include inline-block(middle);
   @include font-size(32px);
 
-  margin-left: rem(20px);
-  padding-top: 3px;
+  margin-left: rem(18px);
+  padding-top: rem(3px);
 
   font-weight: 400;
   font-family: $ff_alternate;
   color: $yellow;
-  letter-spacing: rem(2px);
+  letter-spacing: rem(2.2px);
 }
 
 .main-nav {
@@ -40,7 +37,7 @@
   &--left {
     float: left;
     width: rem(340px);
-    margin-left: rem(21px);
+    margin-left: rem(30px);
   }
 
   &--right {
@@ -48,7 +45,7 @@
 
     float: right;
     width: rem(685px);
-    padding-top: rem(15px);
+    padding-top: rem(14px);
   }
 }
 
@@ -60,6 +57,7 @@
 .main-nav__list {
   float: left;
   width: rem(545px);
+  padding-top: rem(3px);
 }
 
 .optional {
@@ -69,13 +67,10 @@
   text-align: right;
 }
 
-.main-nav__item,
-.optional__item {
-  @include inline-block();
-}
-
 .main-nav__item {
-  margin-right: rem(35px);
+  @include inline-block();
+
+  margin-right: rem(36px);
 
   &:last-child {
     margin-right: 0;
@@ -97,7 +92,7 @@
         width: 4px;
         height: 4px;
         margin-top: -3px;
-        margin-left: 5px;
+        margin-left: 8px;
 
         vertical-align: middle;
 
@@ -128,7 +123,9 @@
 }
 
 .optional__item {
-  margin-left: rem(20px);
+  @include inline-block();
+
+  margin-left: rem(25px);
 
   &:first-child {
     margin-left: 0;
@@ -152,7 +149,7 @@
 }
 
 .main-nav__link {
-  padding: 10px;
+  padding: rem(7px);
 
   color: $white;
   letter-spacing: rem(1.5px);
@@ -162,7 +159,9 @@
   &:focus {
     color: $yellow;
 
-     + .main-nav__sub-list {
+    outline: none;
+
+    & + .main-nav__sub-list {
       z-index: 1;
 
       opacity: 1;
@@ -184,8 +183,8 @@
   z-index: -1;
 
   min-width: rem(225px);
-  margin-left: rem(-115px);
-  padding: rem(35px) rem(50px);
+  transform: translateX(-50%);;
+  padding: rem(33px) rem(47px);
 
   background-color: rgba($white, 0.92);
   border-radius: 20px;
@@ -240,6 +239,8 @@
     font-weight: 700;
     color: #303030;
 
+    outline: none;
+
     &::before {
       border-left-color: rgba($yellow, 0.7);
     }
@@ -266,6 +267,7 @@
 
   &:focus {
     background-color: rgba($yellow, 0.7);
+    outline: none;
   }
 }
 

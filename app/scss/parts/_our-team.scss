@@ -1,7 +1,7 @@
 /* our-team
 ============================== */
 .our-team {
-  padding: rem(74px) 0 rem(118px);
+  padding: rem(77px) 0 rem(120px);
 
   background-color: $white;
   background-image: $bg-grad-grey;
@@ -10,7 +10,7 @@
 .cooks {
   @extend %clearfix;
 
-  margin-bottom: rem(55px);
+  margin-bottom: rem(52px);
 }
 
 .cooks__col {
@@ -30,8 +30,6 @@
 
   margin: 0;
 
-  font-weight: 400;
-  font-family: $ff_alternate;
   color: $dark-blue;
 }
 
@@ -260,7 +258,7 @@
   }
 
   &:focus {
-    border-bottom-color: rgba($white, 0.7);
+    border-bottom-color: $yellow;
     outline: none;
     &::placeholder {
       color: rgba($white, 0.7);
@@ -271,12 +269,16 @@
 .form-order__check {
   @extend %visually-hidden;
 
-  &:checked + .form-order__label::after {
-    display: block;
+  &:checked {
+    & + .form-order__label::after {
+      display: block;
+    }
   }
 
-  &:focus + .form-order__label::before {
-    outline: 3px solid rgba($dark-grey, 0.7);
+  &:focus {
+    & + .form-order__label::before {
+      outline: 3px solid $yellow;
+    }
   }
 }
 

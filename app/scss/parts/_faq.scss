@@ -13,22 +13,20 @@
 .faq__title {
   @include font-size(40px);
 
-  margin: 0 0 rem(50px);
+  margin: 0 0 rem(32px);
 
-  font-weight: 400;
-  font-family: $ff_alternate;
   text-align: center;
   color: $white;
 }
 
 .faq__list {
-  padding: 0 rem(105px) 0 rem(93px);
+  padding: 0 rem(102px);
 }
 
 .faq__item {
   @include font-size(22px);
 
-  margin-bottom: rem(33px);
+  padding-top: rem(21px);
 
   color: $white;
 
@@ -51,10 +49,12 @@
 }
 
 .faq__question {
-  margin: 0 0 rem(20px);
+  margin: 0 0 rem(22px);
 }
 
 .faq__trigger {
+  @include font-size(22px);
+
   padding-bottom: rem(7px);
 
   font-weight: 400;
@@ -70,6 +70,7 @@
     color: $yellow;
 
     border-bottom-color: transparent;
+    outline: none;
   }
 }
 
@@ -81,6 +82,6 @@
   color: $white;
 
   p {
-    margin: rem(19px) 0;
+    margin: 0 0 rem(19px);
   }
 }

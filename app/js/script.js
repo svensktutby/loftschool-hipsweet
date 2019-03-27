@@ -55,7 +55,7 @@
       // Порядок по умолчанию: «широта, долгота».
       // Чтобы не определять координаты центра карты вручную,
       // воспользуйтесь инструментом Определение координат.
-      center: [53.878173, 27.454207],
+      center: [53.900000, 27.566670],
       // Уровень масштабирования. Допустимые значения:
       // от 0 (весь мир) до 19.
       zoom: 12,
@@ -67,13 +67,13 @@
 
     // (1) Добавление маркера на карту
     var myPlacemark = new ymaps.Placemark(
-      [53.878173, 27.454207], // место установки маркера
+      [53.900000, 27.566670], // место установки маркера
       {
-        hintContent: 'My home!', // при наведении
-        balloonContent: 'Янковского, 34' // при клике
+        hintContent: 'Center of Miensk', // при наведении
+        balloonContent: 'Красноармейская улица, 6' // при клике
       }, {
         iconLayout: 'default#image',
-        iconImageHref: '../img/marker.png', // картинка маркера
+        iconImageHref: './img/marker.png', // картинка маркера (путь указывать от файла HTML)
         iconImageSize: [42, 59], // размер маркера
         iconImageOffset: [-20, -60] // сдвиг маркера на карте
       });
@@ -137,17 +137,16 @@
 }());
 /* jshint esnext: true */
 
-/* Anchor scroll
+/* Smooth scroll to anchors
  ******************************/
 ;(function () {
-  //Плавный скролл по якорям
-  $('a[href^="#"]').on('click', function (event) {
+  $('.our-products__order-link').on('click', function (event) {
     event.preventDefault();
 
-    var elementClick = $(this).attr('href'),
-        destination = $(elementClick).offset().top;
+    var target = $(this).attr('href'),
+        anchor = $(target).offset().top;
 
-    $('body,html').animate({scrollTop: destination}, 1000);
+    $('html, body').animate({scrollTop: anchor}, 1000);
   });
 }());
 /* jshint esnext: true */

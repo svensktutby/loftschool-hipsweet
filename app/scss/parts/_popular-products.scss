@@ -12,9 +12,13 @@
   border: none;
   box-shadow: none;
 
+  .bx-viewport {
+    height: auto !important;
+  }
+
   .bx-pager {
     position: absolute;
-    bottom: 59px;
+    bottom: 60px;
 
     width: 100%;
 
@@ -40,7 +44,7 @@
         &:hover,
         &:focus {
           background-color: $white;
-          box-shadow: 0 0 8px rgba($black, 0.8);
+          box-shadow: 0 0 0 5px $brown;
         }
       }
     }
@@ -54,10 +58,10 @@
 }
 
 .popular-product__bg-title {
-  @include font-size(160px, 150px);
+  @include font-size(160px);
 
   position: absolute;
-  top: 45%;
+  top: 41%;
   z-index: -1;
 
   margin-top: rem(-75px);
@@ -67,6 +71,9 @@
   font-family: $ff_alternate;
   text-align: center;
   color: rgba($white, 0.1);
+  text-transform: uppercase;
+  letter-spacing: rem(-4px);
+  word-wrap: normal;
 }
 
 .popular-product__row {
@@ -77,8 +84,15 @@
   &--left {
     @extend %clearfix;
 
+    position: relative;
+
     float: left;
     width: rem(615px);
+  }
+
+  &--right {
+    float: right;
+    width: rem(402px);
   }
 }
 
@@ -89,12 +103,21 @@
 }
 
 .ingredient {
+  @include inline-block();
+
   position: relative;
 
-  padding-left: rem(44px);
+  padding-left: rem(57px);
 
-  &:hover,
-  &:focus {
+  &:hover {
+    .ingredient__link {
+      background-color: rgba($yellow, 0.7);
+
+      &::after {
+        @include sprite($icon-ingredient-hov);
+      }
+    }
+
     .ingredient__list-wrapper {
       z-index: 1;
 
@@ -104,10 +127,44 @@
 }
 
 .ingredient__link {
+  @include font-size($fs_base, $lh_base);
+
   position: relative;
+
+  display: block;
+  width: 40px;
+  height: 40px;
+
+  line-height: 40px;
+  text-align: center;
+  color: $white;
+  text-decoration: none;
+
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+
+  transition: background-color 0.3s;
 
   &::after {
     @include sprite($icon-ingredient);
+    @include pseudo(inline-block, static);
+
+    vertical-align: middle;
+  }
+
+  &:focus {
+    background-color: rgba($yellow, 0.7);
+    outline: none;
+
+    & + .ingredient__list-wrapper {
+      z-index: 1;
+
+      opacity: 1;
+    }
+
+    &::after {
+      @include sprite($icon-ingredient-hov);
+    }
   }
 }
 
@@ -123,7 +180,7 @@
 .ingredient__list-wrapper {
   position: absolute;
   top: rem(-71px);
-  left: rem(138px);
+  left: rem(146px);
   z-index: -1;
 
   min-width: rem(380px);
@@ -161,19 +218,17 @@
 
 .ingredient__name,
 .ingredient__amount {
-  @include inline-block(middle);
-
   padding: rem(6px);
 }
 
 .ingredient__name {
   width: 78%;
-  padding-left: rem(27px);
+  padding-left: rem(30px);
 
   &::before {
     @include pseudo;
 
-    left: 30px;
+    left: 35px;
   }
 
   &--flour {
@@ -218,7 +273,9 @@
 }
 
 .shelf-life {
-  padding-top: rem(236px);
+  position: absolute;
+  bottom: rem(74px);
+  left: rem(18px);
 
   text-align: center;
 }
@@ -240,20 +297,12 @@
 .popular-product__img-wraper {
   float: left;
   width: rem(475px);
-  padding-top: rem(23px);
-  padding-left: rem(41px);
+  padding-top: rem(28px);
+  padding-left: rem(43px);
 }
 
 .popular-product__img {
   @include img(rem(440px));
-}
-
-
-.popular-product__col {
-  &--right {
-    float: right;
-    width: rem(390px);
-  }
 }
 
 .popular-product__title {
@@ -268,14 +317,14 @@
 .popular-product__text {
   @include font-size(15px, 21px);
 
-  margin-bottom: rem(20px);
+  margin-bottom: rem(30px);
 
   color: $white;
 }
 
 .popular-product__price {
-  @include font-size(62px);
-  @include inline-block(middle);
+  @include font-size(62px, 66px);
+  @include inline-block();
 
   margin-right: rem(43px);
 
@@ -285,9 +334,9 @@
 
 .popular-product__order-btn {
   @include font-size(14px);
-  @include inline-block(middle);
+  @include inline-block();
 
-  margin-top: rem(5px);
+  margin-top: rem(15px);
   padding: rem(9px) rem(22px);
 
   color: #a4151c;
@@ -304,5 +353,6 @@
     color: $yellow;
 
     background-color: #a4151c;
+    outline: none;
   }
 }

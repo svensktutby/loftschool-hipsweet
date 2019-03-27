@@ -13,22 +13,6 @@ html {
 }
 
 html {
-@include lg {
-    font-size: $fs_rem - 1px;
-  }
-
-@include md {
-    font-size: $fs_rem - 2px;
-  }
-
-@include sm {
-    font-size: $fs_rem - 3px;
-  }
-
-@include xs {
-    font-size: $fs_rem - 4px;
-  }
-
   box-sizing: border-box;
 
   font-size: $fs_rem;
@@ -63,21 +47,8 @@ body {
 }
 
 .container {
-@include lg {
-    width: $screen-lg_bp;
-  }
-
-@include md {
-    width: $screen-md_bp;
-  }
-
-@include sm {
-    width: auto;
-  }
-
   width: $container-width;
   margin: 0 auto;
-  padding: 0 10px;
 }
 
 ul {
@@ -93,8 +64,11 @@ footer {
   margin-top: -$footer-height;
 }
 
-.main-title,
-.section-title {
+.page-content__title,
+.section__title {
+  font-weight: 400;
+  font-family: $ff_alternate;
+
   &--hidden {
     @extend %visually-hidden;
   }
